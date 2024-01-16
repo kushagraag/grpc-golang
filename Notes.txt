@@ -1,0 +1,65 @@
+Why GRPC? 
+
+					Normal working
+
+CLIENT --------------------------->> SERVER					// request and response type
+	   <<---------------------------
+
+	   Request Response
+	   Synchronus
+	   Slow, waits
+	   not scalable
+
+RPC - remote procedure calls
+
+CLIENT ------------------------------------------>> SERVER
+		directly call func from client to server
+		instead of json, use protobuf
+		small payload
+		acclerates communication
+
+
+
+CLIENT ============================================ SERVER 		// imagine a big pipeline
+
+		streaming - continuous flow of data
+		asynchronous and fasr
+		extreme scalability
+		use cases - MICROSERVICES
+		BLOCKCHAIN peers interation
+
+
+						UNARY API 
+					------------->>
+					<<------------
+CLIENT ============================================ SERVER
+
+			request response method
+			although connected with stream, both works simply with req response method
+			also called UNARY API 
+
+
+						SERVER STREAMING
+						<<--------------
+CLIENT ============================================ SERVER
+
+			client sends a request and server sends a stream back
+
+
+						CLIENT STREAMING
+						-------------->>
+CLIENT ============================================ SERVER
+
+			client sends a STREAM OF DATA and server sends a simple response
+
+
+						GRPC
+
+				BI-DIRECTIONAL STREAMING 
+					------------->>
+					<<------------
+CLIENT ============================================ SERVER
+
+	both sends streams, not synchronous. both can send simultaniously
+
+	not a queue but message order is preserved
