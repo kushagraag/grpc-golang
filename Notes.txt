@@ -1,3 +1,7 @@
+to run - install go at channel 1.19/stable
+open two terminals, navigate to /server, /client in either of them.
+run go run *.go in both
+
 Why GRPC? 
 
 					Normal working

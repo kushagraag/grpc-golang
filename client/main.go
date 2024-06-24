@@ -25,16 +25,23 @@ func main() {
 		Names: []string{"bob", "marley", "marco"},
 	}
 
-	// callSayHello(client)
-	// log.Println()
+
+	log.Println("Unary streaming")
+	callSayHello(client)
+	log.Println()
 	
-	// callSayHelloServerStream(client, names)
-	// log.Println()
+	log.Println("Server stream aka single request multiple response")
 	
-	// callSayHelloClientStreaming(client, names)
-	// log.Println()
+	callSayHelloServerStream(client, names)
+	log.Println()
+	
+	log.Println("Client stream aka multiple request single response")
+	
+	callSayHelloClientStreaming(client, names)
+	log.Println()
+
+	log.Println("Bi stream aka multiple request multiple response")
 
 	callSayHelloBidirectionalStreaming(client, names)
-
 
 }
